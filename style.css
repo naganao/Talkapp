@@ -1,0 +1,85 @@
+#message_box {
+  background-color: #fff;
+  max-width: 500px;
+}
+
+.user_message_text {
+  text-align: left;
+  max-width: 50%;
+}
+
+.bot_message_text {
+  margin-left: auto;
+  text-align: right;
+  max-width: 50%;
+}
+
+.user {
+  position: relative;
+	display: inline-block;
+ 	margin: 1.5em 0 1.5em 15px;
+	padding: 7px 10px;
+	min-width: 120px;
+ 	max-width: 100%;
+ 	color: #555;
+	font-size: 16px;
+	background: #e0edff;
+}
+
+.user:before{
+  content: "";
+	position: absolute;
+	top: 50%;
+	left: -30px;
+ 	margin-top: -15px;
+	border: 15px solid transparent;
+	border-right: 15px solid #e0edff;
+}
+
+.user p{
+	margin: 0;
+	padding: 0;
+}
+
+.bot {
+  position: relative;
+	display: inline-block;
+ 	margin: 1.5em 15px 1.5em 0;
+  margin-left: auto;
+	padding: 7px 10px;
+	min-width: 120px;
+ 	max-width: 100%;
+ 	color: #555;
+	font-size: 16px;
+	background: #FFF;
+ 	border: solid 3px #555;
+ 	box-sizing: border-box;
+}
+
+.bot:before{
+  content: "";
+	position: absolute;
+	top: 50%;
+	right: -24px;
+ 	margin-top: -12px;
+	border: 12px solid transparent;
+	border-left: 12px solid #FFF;
+ 	z-index: 2;
+}
+
+.bot:after{
+  content: "";
+	position: absolute;
+	top: 50%;
+	right: -30px;
+ 	margin-top: -14px;
+	border: 14px solid transparent;
+	border-left: 14px solid #555;
+ 	z-index: 1;
+}
+
+.bot p {
+	margin: 0;
+	padding: 0;
+  text-align:left; 
+}
