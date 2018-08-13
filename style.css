@@ -1,6 +1,8 @@
 #message_box {
   background-color: #fff;
-  max-width: 500px;
+  max-width: 550px;
+  height: 60vh;
+  overflow-x: auto;
 }
 
 .user_message_text {
@@ -12,6 +14,14 @@
   margin-left: auto;
   text-align: right;
   max-width: 50%;
+}
+
+.bot_img {
+  width: 30px;
+}
+
+.user_img {
+  width: 30px;
 }
 
 .user {
@@ -81,5 +91,5 @@
 .bot p {
 	margin: 0;
 	padding: 0;
-  text-align:left; 
+  text-align:left;
 }
