@@ -3,6 +3,15 @@ $(function () {
 
     if($("#talk_input").val() === ""){
       $("#message").append('<div class="bot_message_text"><div class="bot"><p>何か入力してね</p></div><img src="bot.png" class="bot_img rounded-circle"></div>');
+      // 一番下までスクロールする
+      $('#message_box').animate({scrollTop: $('#message_box')[0].scrollHeight}, 'fast');
+      // bot読み上げ
+      if($("#speech").prop("checked") == true){
+        var text = "何か入力してね";
+        speechSynthesis.speak(
+          new SpeechSynthesisUtterance(text)
+        );
+      }
       return;
     }
 
@@ -25,6 +34,15 @@ $(function () {
       //var reply = response.results[0].reply;
       if(response.status === 2000){
         $("#message").append('<div class="bot_message_text"><div class="bot"><p>すみません、わかりません</p></div><img src="bot.png" class="bot_img rounded-circle"></div>');
+        // 一番下までスクロールする
+        $('#message_box').animate({scrollTop: $('#message_box')[0].scrollHeight}, 'fast');
+        // bot読み上げ
+        if($("#speech").prop("checked") == true){
+          var text = "すみません、わかりません";
+          speechSynthesis.speak(
+            new SpeechSynthesisUtterance(text)
+          );
+        }
         console.log('fail');
         return;
       }
@@ -33,7 +51,17 @@ $(function () {
       $("#message").append('<div class="bot_message_text"><div class="bot"><p>' + response.results[0].reply + '</p></div><img src="bot.png" class="bot_img rounded-circle"></div>');
       // 一番下までスクロールする
       $('#message_box').animate({scrollTop: $('#message_box')[0].scrollHeight}, 'fast');
-    })
+
+      // bot読み上げ
+      if($("#speech").prop("checked") == true){
+        var text = response.results[0].reply;
+        speechSynthesis.speak(
+          new SpeechSynthesisUtterance(text)
+        );
+      }
+
+    });
+
   });
 
 });
